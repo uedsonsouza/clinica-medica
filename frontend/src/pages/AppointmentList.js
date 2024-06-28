@@ -21,21 +21,22 @@ const AppointmentList = () => {
 
   return (
     <div className="container">
-      <h2>Appointments</h2>
-      <Link to="/appointments/new" className="btn btn-primary mb-3">Add Appointment</Link>
+      <h2>Agendamento</h2>
+      <Link to="/appointments/new" className="btn btn-primary mb-3">Adicionar agendamento</Link>
+      <Link to="/patients" className="btn btn-secondary mb-3 ml-2">Pacientes</Link>
       <table className="table">
         <thead>
           <tr>
-            <th>Patient</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Actions</th>
+            <th>Paciente</th>
+            <th>Data</th>
+            <th>Descricao</th>
+            <th>Acoes</th>
           </tr>
         </thead>
         <tbody>
           {appointments.map((appointment) => (
             <tr key={appointment._id}>
-              <td>{appointment.patient.name}</td>
+              <td>{appointment.patient?.name || 'Nome Indisponível'}</td>
               <td>{new Date(appointment.date).toLocaleString()}</td>
               <td>{appointment.description}</td>
               <td>

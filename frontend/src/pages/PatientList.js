@@ -21,15 +21,16 @@ const PatientList = () => {
 
   return (
     <div className="container">
-      <h2>Patients</h2>
-      <Link to="/patients/new" className="btn btn-primary mb-3">Add Patient</Link>
+      <h2>Pacientes</h2>
+      <Link to="/patients/new" className="btn btn-primary mb-3">Adicionar paciente</Link>
+      <Link to="/appointments/new" className="btn btn-secondary mb-3 ml-2">Agendar</Link> {/* Adicionado link para agendamento */}
       <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
-            <th>Actions</th>
+            <th>Nome</th>
+            <th>idade</th>
+            <th>Endereco</th>
+            <th>Acoes</th>
           </tr>
         </thead>
         <tbody>

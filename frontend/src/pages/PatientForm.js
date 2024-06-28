@@ -34,12 +34,17 @@ const PatientForm = () => {
     navigate('/patients');
   };
 
+  const handleLogout = () => {
+    // Perform any logout logic here, e.g., clearing user data
+    navigate('/login');
+  };
+
   return (
     <div className="container">
-      <h2>{id ? 'Edit Patient' : 'Add Patient'}</h2>
+      <h2>{id ? 'Edit Patient' : 'Adicionar paciente'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Name</label>
+          <label>Nome</label>
           <input
             type="text"
             className="form-control"
@@ -49,7 +54,7 @@ const PatientForm = () => {
           />
         </div>
         <div className="form-group">
-          <label>Age</label>
+          <label>Idade</label>
           <input
             type="number"
             className="form-control"
@@ -59,7 +64,7 @@ const PatientForm = () => {
           />
         </div>
         <div className="form-group">
-          <label>Address</label>
+          <label>Endereco</label>
           <input
             type="text"
             className="form-control"
@@ -68,6 +73,8 @@ const PatientForm = () => {
           />
         </div>
         <button type="submit" className="btn btn-primary">Save</button>
+        <br />
+        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
       </form>
     </div>
   );

@@ -43,19 +43,23 @@ const AppointmentForm = () => {
     navigate('/appointments');
   };
 
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="container">
       <h2>{id ? 'Edit Appointment' : 'Add Appointment'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Patient</label>
+          <label>Paciente</label>
           <select
             className="form-control"
             value={patient}
             onChange={(e) => setPatient(e.target.value)}
             required
           >
-            <option value="">Select Patient</option>
+            <option value="">Selecione o paciente</option>
             {patients.map((p) => (
               <option key={p._id} value={p._id}>
                 {p.name}
@@ -64,7 +68,7 @@ const AppointmentForm = () => {
           </select>
         </div>
         <div className="form-group">
-          <label>Date</label>
+          <label>Data</label>
           <input
             type="datetime-local"
             className="form-control"
@@ -74,7 +78,7 @@ const AppointmentForm = () => {
           />
         </div>
         <div className="form-group">
-          <label>Description</label>
+          <label>Descricao</label>
           <input
             type="text"
             className="form-control"
@@ -83,6 +87,8 @@ const AppointmentForm = () => {
           />
         </div>
         <button type="submit" className="btn btn-primary">Save</button>
+
+        {/* <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button> */}
       </form>
     </div>
   );

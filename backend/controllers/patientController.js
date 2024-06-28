@@ -11,7 +11,7 @@ exports.createPatient = async (req, res) => {
   }
 };
 
-exports.getPatients = async (req, res) => {
+exports.getPatients = async (_req, res) => {
   try {
     const patients = await Patient.find();
     res.status(200).json(patients);

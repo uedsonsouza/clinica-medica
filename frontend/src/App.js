@@ -5,12 +5,14 @@ import PatientList from './pages/PatientList';
 import PatientForm from './pages/PatientForm';
 import AppointmentList from './pages/AppointmentList';
 import AppointmentForm from './pages/AppointmentForm';
+import Register from './pages/Register';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/patients" exact element={<PatientList />} />
           <Route path="/patients/new" element={<PatientForm />} />
